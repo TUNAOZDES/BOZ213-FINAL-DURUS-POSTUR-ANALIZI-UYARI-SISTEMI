@@ -40,7 +40,7 @@ Proje, Python 3.10+ kullanımını sağlar. Aşağıdaki temel kütüphanelerden
 | **MediaPipe** | İnsan vücudu eklem (pose landmark) tespiti |
 | **NumPy** | Matematiksel hesaplamalar ve açı analizleri |
 | **Tkinter** | Grafiksel kullanıcı arayüzü (GUI) |
-| **Pillow (PIL)** | Türkçe karakter destekli metin çizimi |
+| **Pillow** | Türkçe karakter destekli metin çizimi |
 
 ---
 
@@ -79,7 +79,7 @@ git clone https://github.com/TUNAOZDES/BOZ213-FINAL-DURUS-POSTUR-ANALIZI-UYARI-S
 cd BOZ213-FINAL-DURUS-POSTUR-ANALIZI-UYARI-SISTEMI
 ```
 
-### 2. Sanal Ortam Oluşturun (Önerilir)
+### 2. Sanal Ortam Oluşturun (Önerilen)
 
 **Windows**
 ```bash
@@ -121,18 +121,6 @@ Analiz sonunda:
 - Açı değerleri hesaplanır  
 - Duruş puanı oluşturulur  
 - HTML formatında rapor üretilir 
-
----
-
-## 📊 Raporlama
-
-Sistem analiz sırasında elde edilen verileri kullanarak:
-- Genel duruş puanı  
-- Risk seviyesi  
-- En sık görülen duruş problemi  
-- Sağlık önerileri  
-
-içeren HTML tabanlı görsel bir rapor üretir.
 
 ---
 
@@ -218,5 +206,6 @@ Kaynak kodları yalnızca inceleme ve eğitim amaçlı erişime sahiptir. İzin 
 **Copyright © 2026 Tuna Özdeş**
 
 _Not: Bu proje Ankara Üniversitesi BOZ213 dersi kapsamında geliştirilmiştir._
+
 
 
