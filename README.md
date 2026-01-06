@@ -201,6 +201,14 @@ Bu sürece ait detaylı açıklamalar aşağıdaki dosyalarda yer almaktadır:
 
 ---
 
+## 📌 Sistem Mimarisi ve İşleyiş
+
+Aşağıdaki infografik, sistemin veri girişinden rapor çıktısına kadar olan genel mimarisini ve işlem adımlarını özetlemektedir.
+
+![Sistem Mimarisi ve İşleyiş](infografik.png)
+
+---
+
 ## 📄 Lisans ve Telif Hakkı
 
 Bu projede **Tüm Haklar Saklıdır**.
@@ -210,4 +218,5 @@ Kaynak kodları yalnızca inceleme ve eğitim amaçlı erişime sahiptir. İzin 
 **Copyright © 2026 Tuna Özdeş**
 
 _Not: Bu proje Ankara Üniversitesi BOZ213 dersi kapsamında geliştirilmiştir._
+
 
