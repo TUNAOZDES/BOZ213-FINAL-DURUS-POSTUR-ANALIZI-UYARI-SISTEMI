@@ -1,89 +1,82 @@
-# Proje Mimarisi
+# 📐 Proje Mimarisi
 
-Bu doküman, Duruş (Postür) Analiz Sistemi’nin
-genel yazılım mimarisini ve modüller arasındaki
-sorumluluk dağılımını açıklamak amacıyla hazırlanmıştır.
-
-Proje, nesne yönelimli programlama (OOP) prensipleri
-doğrultusunda modüler bir yapıda tasarlanmıştır.
+Bu proje, Nesne Yönelimli Programlama (OOP) prensipleri temel alınarak,
+modüler, okunabilir ve genişletilebilir bir mimari ile geliştirilmiştir.
+Sistem; canlı analiz, statik analiz, görüntü işleme, kullanıcı arayüzü ve
+raporlama katmanlarından oluşmaktadır.
 
 ---
 
-## Genel Mimari Yaklaşım
+## 🧱 Mimari Katmanlar
 
-Sistem, tek bir dosyada toplanmış karmaşık bir yapı yerine,
-her biri belirli bir sorumluluğa sahip modüllerden oluşmaktadır.
-Bu yaklaşım sayesinde:
+### 1️⃣ Giriş ve Kontrol Katmanı
+**main.py**
 
-- Kodun okunabilirliği artmıştır
-- Bakım ve geliştirme kolaylaşmıştır
-- OOP ilkeleri daha görünür hale gelmiştir
-
----
-
-## Modül Bazlı Yapı
-
-### main.py
-- Uygulamanın giriş noktasıdır
-- Kullanıcı etkileşimini başlatır
-- Analiz modlarını koordine eder
-- Diğer modüller arasında veri akışını sağlar
-
-### goruntu_isleme.py
-- MediaPipe kullanarak vücut landmark tespitini yapar
-- Açı hesaplama algoritmalarını içerir
-- Postür analizine ait matematiksel işlemleri gerçekleştirir
-
-### kamera_modulu.py
-- Kamera donanımına erişimi yönetir
-- Kamera başlatma, kare okuma ve kapatma işlemlerini soyutlar
-- Donanım bağımlılığını sistemin geri kalanından ayırır
-
-### arayuz_ozellikleri.py
-- Analiz sonuçlarının görsel olarak çizilmesini sağlar
-- Açı değerleri, puanlama ve uyarı göstergelerini üretir
-- Kullanıcıya geri bildirim sunar
-
-### raporlama.py
-- Analiz sonuçlarını kaydeder
-- HTML formatında detaylı rapor üretir
-- Hata analizi ve sağlık önerilerini oluşturur
-
-### analiz_modu.py
-- Tüm analiz türleri için soyut bir temel sınıftır
-- Analiz süreçleri için ortak bir arayüz tanımlar
-- Soyutlama ve çok biçimlilik ilkelerini gösterir
-
-### canli_analiz.py
-- AnalizModu sınıfından türetilmiştir
-- Canlı kamera tabanlı analiz sürecini temsil eder
-- İleride farklı analiz türlerinin eklenebilmesine olanak sağlar
+Uygulamanın başlangıç noktasıdır. Kullanıcıdan analiz türü (canlı / statik)
+alınır, gerekli modüller başlatılır ve sistemin genel çalışma akışı bu
+dosya üzerinden koordine edilir.
 
 ---
 
-## Nesne Yönelimli Programlama (OOP) Yapısı
+### 2️⃣ Kamera ve Veri Girişi Katmanı
+**kamera_modulu.py**
 
-Proje içerisinde aşağıdaki OOP prensipleri uygulanmıştır:
-
-- **Kapsülleme (Encapsulation):**  
-  Her modül yalnızca kendi sorumluluğundaki işlemleri içerir.
-
-- **Soyutlama (Abstraction):**  
-  AnalizModu soyut sınıfı ile analiz süreçleri için ortak bir yapı tanımlanmıştır.
-
-- **Kalıtım (Inheritance):**  
-  CanliAnaliz sınıfı, AnalizModu sınıfından türetilmiştir.
-
-- **Çok Biçimlilik (Polymorphism):**  
-  Farklı analiz modları, aynı arayüz üzerinden çalışabilecek şekilde tasarlanmıştır.
+Kamera donanımı ile ilgili tüm işlemler bu modülde kapsüllenmiştir.
+Kamera başlatma, kare okuma ve bağlantıyı güvenli şekilde kapatma işlemleri
+bu katmanda gerçekleştirilir.
 
 ---
 
-## Sonuç
+### 3️⃣ Analiz Katmanı
+**analiz_modu.py**
 
-Bu mimari yapı sayesinde proje;
-- Modüler
-- Genişletilebilir
-- Akademik değerlendirme kriterlerine uygun
+Tüm analiz türleri için ortak bir soyut yapı tanımlar. Bu yapı sayesinde
+analiz türleri birbirinden bağımsız olarak geliştirilebilir ve ana sistem,
+analiz detaylarından soyutlanmış olur.
 
-bir yazılım sistemi haline getirilmiştir.
+**canli_analiz.py**
+
+Canlı (kamera tabanlı) analiz sürecini nesne yönelimli bir yapı altında
+temsil eder. Gerçek zamanlı analiz mantığı bu modül üzerinden
+genişletilebilir şekilde tasarlanmıştır.
+
+---
+
+### 4️⃣ Görüntü İşleme ve Hesaplama Katmanı
+**goruntu_isleme.py**
+
+MediaPipe kütüphanesi kullanılarak vücut eklem (landmark) noktaları tespit
+edilir. Omuz, boyun, yüz ve omurga açıları matematiksel algoritmalar ile
+hesaplanır ve analiz için gerekli ham veriler üretilir.
+
+---
+
+### 5️⃣ Kullanıcı Arayüzü Katmanı
+**arayuz_ozellikleri.py**
+
+Analiz sonuçlarının kullanıcıya görsel olarak sunulmasından sorumludur.
+Açı değerleri, puanlama, seviye göstergeleri ve uyarılar bu modül
+üzerinden ekrana çizilir.
+
+---
+
+### 6️⃣ Raporlama Katmanı
+**raporlama.py**
+
+Analiz süreci boyunca elde edilen verileri toplayarak kullanıcıya özel
+HTML formatında rapor üretir. Analiz görüntüsü, puanlar, seviye bilgileri
+ve sistem önerileri rapora entegre edilir.
+
+---
+
+## 🔄 Genel Veri Akışı
+
+Kamera / Fotoğraf →  
+Görüntü İşleme (MediaPipe) →  
+Açı Hesaplama ve Puanlama →  
+Postür Değerlendirmesi →  
+Kullanıcı Arayüzü →  
+Raporlama
+
+Bu mimari yapı sayesinde sistem; sürdürülebilir, test edilebilir ve yeni
+analiz türlerine açık bir şekilde tasarlanmıştır.
