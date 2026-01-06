@@ -1,92 +1,53 @@
-\# Yapay Zeka Asistanı Kullanımı
+# 🤖 Yapay Zeka Kullanımı (AI Usage)
 
+## Amaç
+Bu belge, proje geliştirme sürecinde yapay zeka asistanının
+hangi amaçlarla ve hangi aşamalarda kullanıldığını açıklamak için hazırlanmıştır.
 
+Kullanım süreci tamamen **eğitim ve geliştirme amaçlıdır**.
 
-Bu projede yapay zeka asistanı, yazılım geliştirme sürecinin
+---
 
-her aşamasında aktif olarak kullanılmıştır.
+## Yapay Zeka Kullanım Alanları
 
-Asistan, yalnızca soru-cevap aracı değil; rehberlik eden,
+### 1. Mimari Planlama
+- Modüler dosya yapısının oluşturulması
+- Analiz modlarının ayrıştırılması (canlı / statik)
+- Sınıf sorumluluklarının belirlenmesi
 
-geri bildirim sağlayan ve kod kalitesini artıran bir yardımcı
+### 2. Nesne Yönelimli Programlama (OOP)
+- Kapsülleme (Encapsulation) uygulamaları
+- Kalıtım (Inheritance) yapılarının tasarlanması
+- Çok biçimlilik (Polymorphism) senaryolarının oluşturulması
 
-olarak değerlendirilmiştir.
+### 3. Kod Geliştirme Desteği
+- Hatalı kod bloklarının düzeltilmesi
+- Alternatif ve daha okunabilir kod önerileri
+- Performans ve sadeleştirme önerileri
 
+### 4. Akademik Dokümantasyon
+- Rapor bölümlerinin yazım dili
+- Teknik açıklamaların sadeleştirilmesi
+- README ve ek belgelerin hazırlanması
 
+---
 
-\## Kullanım Alanları
+## Kullanım Sınırları
+Yapay zeka:
 
+- Kodları otomatik üretmek için değil
+- Öğrencinin yönlendirmesi ve kontrolü altında
+- Karar verici değil, **destekleyici araç** olarak kullanılmıştır
 
+Tüm nihai kararlar ve entegrasyonlar öğrenci tarafından yapılmıştır.
 
-Yapay zeka asistanı aşağıdaki alanlarda etkin şekilde kullanılmıştır:
+---
 
+## Sonuç
+Yapay zeka destekli geliştirme süreci, projenin:
 
+- Akademik kalitesini
+- Kod düzenini
+- Mimari tutarlılığını
 
-\- Proje mimarisinin planlanması
-
-\- Modüler dosya yapısının oluşturulması
-
-\- Nesne yönelimli programlama (OOP) ilkelerinin uygulanması
-
-\- Kod organizasyonu ve okunabilirliğin artırılması
-
-\- Yorum satırlarının akademik ve açıklayıcı hale getirilmesi
-
-\- Hata ayıklama ve mantıksal düzeltmeler
-
-
-
-\## Somut Katkı Örnekleri
-
-
-
-Yapay zeka asistanı ile yapılan etkileşimler sonucunda:
-
-
-
-\- Tek dosyada toplanmış kod yapısı modüllere ayrılmıştır.
-
-\- Analiz, arayüz, kamera ve raporlama sorumlulukları
-
-&nbsp; ayrı sınıflar altında toplanmıştır.
-
-\- Soyutlama ve kalıtım ilkelerini göstermek amacıyla
-
-&nbsp; soyut bir analiz sınıfı (AnalizModu) oluşturulmuştur.
-
-\- Kod içerisine, fonksiyonların ve sınıfların görevlerini
-
-&nbsp; açıklayan yorum satırları eklenmiştir.
-
-\- Okunabilirliği düşük olan kod blokları sadeleştirilmiştir.
-
-
-
-\## Geliştirme Sürecine Etkisi
-
-
-
-Yapay zeka asistanı ile kurulan bu etkileşim sayesinde:
-
-
-
-\- Kodun sürdürülebilirliği artmıştır.
-
-\- Proje, akademik değerlendirme kriterlerine daha uygun hale gelmiştir.
-
-\- OOP prensipleri daha görünür ve anlaşılır şekilde uygulanmıştır.
-
-
-
-\## Sonuç
-
-
-
-Yapay zeka asistanı, proje sürecinde aktif bir geliştirme ortağı
-
-olarak kullanılmış ve yazılımın hem teknik hem de akademik
-
-kalitesine doğrudan katkı sağlamıştır.
-
-
-
+olumlu yönde etkilemiş ve ders kapsamındaki beklentileri karşılamıştır.
