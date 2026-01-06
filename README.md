@@ -1,110 +1,191 @@
-# Duruş (Postür) Analiz Sistemi
 
-Bu proje, Python programlama dili kullanılarak geliştirilen,
-kamera tabanlı bir Duruş (Postür) Analiz ve Uyarı Sistemidir.
+# DURUŞ (POSTÜR) ANALİZİ VE UYARI SİSTEMİ
 
-Sistem, MediaPipe kütüphanesi aracılığıyla insan vücudu üzerindeki
-kritik eklem (landmark) noktalarını tespit eder, açısal hesaplamalar yapar
-ve kullanıcının duruşunu analiz ederek görsel ve işitsel geri bildirimler sunar.
-
----
-
-## Projenin Amacı
-
-Bu projenin amacı;
-
-- Nesne yönelimli programlama (OOP) prensiplerini gerçek bir uygulama üzerinde göstermek
-- Görüntü işleme ve analiz süreçlerini modüler bir mimari ile gerçekleştirmek
-- Kullanıcıya canlı (kamera) ve statik (fotoğraf) postür analizi sunmak
-- Akademik değerlendirme kriterlerine uygun, düzenli ve sürdürülebilir bir yazılım geliştirmektir
+**Ders:** BOZ213 – Nesne Yönelimli Programlama (OOP)  
+**Proje Türü:** Final Projesi  
+**Geliştirici:** Tuna Özdeş  
+**Üniversite:** Ankara Üniversitesi  
+**Durum:** Tamamlandı (v1.0)
 
 ---
 
-## Temel Özellikler
+## 📖 Proje Hakkında
+Bu proje, kamera veya statik görüntüler üzerinden insan duruşunu (postür) analiz eden ve
+omuz, boyun, yüz ve omurga açılarını hesaplayarak kullanıcıya görsel ve sayısal geri bildirim
+sunan bir postür analiz sistemidir. Sistem, MediaPipe tabanlı iskelet (landmark) tespiti ve
+OpenCV destekli görüntü işleme teknikleri kullanılarak geliştirilmiştir.
 
-- Canlı kamera tabanlı gerçek zamanlı postür analizi
-- Statik görüntü (fotoğraf) üzerinden detaylı analiz
-- Omuz, boyun, yüz ve omurga açı hesaplamaları
-- Kritik duruşlarda sesli uyarı sistemi
-- Skor tabanlı değerlendirme (optimum / dikkat / kritik)
-- HTML formatında detaylı analiz raporu oluşturma
-
----
-
-## Sistem Genel Yapısı (İnfografik)
-
-Aşağıdaki infografik, geliştirilen Duruş (Postür) Analizi Uyarı Sisteminin
-ana bileşenlerini, kullanılan teknolojileri ve sistemin genel işleyişini
-görsel olarak özetlemektedir.
-
-![Duruş (Postür) Analizi Uyarı Sistemi](infografik.png)
+Proje, Nesne Yönelimli Programlama (OOP) prensipleri esas alınarak modüler, okunabilir ve
+genişletilebilir bir mimariyle tasarlanmıştır.
 
 ---
 
-## Kullanılan Teknolojiler
+## 🧩 Temel Özellikler
 
-- Python 3
-- OpenCV
-- MediaPipe
-- Tkinter
-- NumPy
-- Pillow (PIL)
-
----
-
-## Proje Dosya Yapısı
-
-- main.py  
-  Uygulamanın ana çalışma akışını yönetir ve tüm modüller arasında koordinasyon sağlar.
-
-- goruntu_isleme.py  
-  MediaPipe kullanarak vücut eklem noktalarını tespit eder ve açı hesaplamalarını yapar.
-
-- kamera_modulu.py  
-  Kamera donanımının başlatılması, kare okunması ve güvenli şekilde kapatılmasından sorumludur.
-
-- arayuz_ozellikleri.py  
-  Analiz sonuçlarının görsel arayüz üzerinde çizilmesini ve kullanıcıya sunulmasını sağlar.
-
-- raporlama.py  
-  Analiz sonuçlarını HTML formatında detaylı bir rapor haline getirir.
-
-- analiz_modu.py  
-  Analiz türleri için soyut (abstract) temel sınıfı tanımlar.
-
-- canli_analiz.py  
-  Canlı analiz modunun nesne yönelimli yapısını temsil eder.
-
-- pair_programming.md  
-  Pair programming sürecinin ve iş paylaşımının detaylı açıklamasını içerir.
-
-- ai_usage.md  
-  Yapay zeka asistanının proje sürecinde nasıl kullanıldığını açıklar.
-
-- proje_mimarisi.md  
-  Projenin genel mimari yapısını ve modüler tasarımını açıklar.
+- **Canlı ve Statik Analiz:** Kamera veya tekil görüntü üzerinden postür analizi  
+- **Gerçek Zamanlı Geri Bildirim:** Açı, seviye ve uyarıların anlık gösterimi  
+- **İskelet Tabanlı Modelleme:** MediaPipe ile eklem (landmark) tespiti  
+- **Otomatik Raporlama:** HTML tabanlı analiz raporu üretimi  
+- **Nesne Yönelimli Mimari:** Modüler, okunabilir ve genişletilebilir yapı 
 
 ---
 
-## Nesne Yönelimli Programlama (OOP) Kullanımı
+## 🛠️ Kullanılan Teknolojiler
 
-Bu projede nesne yönelimli programlama prensipleri etkin ve bilinçli şekilde uygulanmıştır:
+Proje, Python 3.10+ kullanımını sağlar. Aşağıdaki temel kütüphanelerden yararlanılmıştır:
 
-- Kapsülleme (Encapsulation):  
-  Kamera yönetimi, görüntü işleme, arayüz çizimi ve raporlama işlemleri ayrı sınıflar altında toplanmıştır. Her sınıf yalnızca kendi sorumluluk alanına odaklanmakta ve sistemin geri kalanından bağımsız çalışabilmektedir.
-
-- Soyutlama (Abstraction):  
-  AnalizModu sınıfı ile analiz türleri için ortak bir soyut yapı oluşturulmuştur. Bu yapı sayesinde analiz türü değişse bile üst seviye sistem akışı değişmeden kalabilmektedir. Bu sayede sistem, analiz türünün iç detaylarını bilmeden analiz sürecini yönetebilmektedir.
-
-- Kalıtım (Inheritance):  
-  Canlı analiz ve statik analiz yapıları ortak soyut sınıflardan türetilmiştir. Bu sayede kod tekrarından kaçınılmış ve genişletilebilir bir yapı elde edilmiştir.
-
-- Çok Biçimlilik (Polymorphism):  
-  Farklı analiz modları aynı arayüzü kullanarak kendi iç işleyişlerine göre farklı davranışlar sergileyebilmektedir. Bu durum, sistemin esnekliğini artırmakta ve analiz türleri arasında geçişi sorunsuz hale getirmektedir.
+| Kütüphane | Kullanım Amacı |
+|----------------------|----------|
+| **OpenCV** | Görüntü alma, kare işleme ve çizim işlemleri |
+| **MediaPipe** | İnsan vücudu eklem (pose landmark) tespiti |
+| **NumPy** | Matematiksel hesaplamalar ve açı analizleri |
+| **Tkinter** | Grafiksel kullanıcı arayüzü (GUI) |
+| **Pillow (PIL)** | Türkçe karakter destekli metin çizimi |
 
 ---
 
-## Pair Programming ve Yapay Zeka Asistanı Kullanımı
+## 📁 Proje Dosya Yapısı
+```
+TUNA_OZDES_FINAL_PROJE/
+│
+├── analiz_modu.py
+├── arayuz_ozellikleri.py
+├── canli_analiz.py
+├── goruntu_isleme.py
+├── kamera_modulu.py
+├── raporlama.py
+├── main.py
+│
+├── Raporlar/
+│   └── (Oluşturulan HTML raporlar)
+│
+├── infografik.png
+├── README.md
+├── proje_mimarisi.md
+├── pair_programming.md
+└── ai_usage.md
+```
+
+---
+
+## ⚙️ Kurulum ve Çalıştırma
+
+Projeyi çalıştırmak için aşağıdaki adımları izleyin.
+
+### 1. Repoyu Klonlayın
+
+```bash
+git clone https://github.com/TUNAOZDES/BOZ213-FINAL-DURUS-POSTUR-ANALIZI-UYARI-SISTEMI.git
+cd BOZ213-FINAL-DURUS-POSTUR-ANALIZI-UYARI-SISTEMI
+```
+
+### 2. Sanal Ortam Oluşturun (Önerilir)
+
+**Windows**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Mac / Linux**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+> ⚠️ Windows PowerShell için gerekirse:
+> `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`
+
+### 3. Gerekli Kütüphaneleri Yükleyin
+
+```bash
+pip install opencv-python mediapipe numpy pillow reportlab
+```
+
+### 4. Uygulamayı Çalıştırın
+
+```bash
+python main.py
+```
+
+> ℹ️ İlk çalıştırmada MediaPipe modelleri otomatik olarak indirilecektir.
+
+---
+
+## ▶️ Kullanım
+
+- Canlı Analiz: Kamera üzerinden gerçek zamanlı postür analizi  
+- Statik Analiz: Seçilen tek bir görüntü dosyası üzerinden analiz  
+
+Analiz sonunda:
+- Açı değerleri hesaplanır  
+- Duruş puanı oluşturulur  
+- HTML formatında rapor üretilir 
+
+---
+
+## 📊 Raporlama
+
+Sistem analiz sırasında elde edilen verileri kullanarak:
+- Genel duruş puanı  
+- Risk seviyesi  
+- En sık görülen duruş problemi  
+- Sağlık önerileri  
+
+içeren HTML tabanlı görsel bir rapor üretir.
+
+---
+
+## 🏗️ Yazılım Mimarisi ve OOP Prensipleri
+
+Bu proje, **Temiz Kod (Clean Code)** prensipleri ve **Nesne Yönelimli Programlama (OOP)** kurallarına uygun olarak
+tasarlanmıştır. Her bileşen, tek bir sorumluluğa sahip olacak şekilde ayrıştırılmıştır.
+
+### 1. Sınıflar ve Sorumluluklar
+
+- **MainWindow (Tkinter)**  
+  Kullanıcı arayüzünü yönetir. Kullanıcı etkileşimleri, butonlar ve analiz başlatma işlemleri bu sınıf üzerinden yürütülür.
+
+- **KameraYoneticisi**  
+  Kameranın başlatılması, kare okunması ve serbest bırakılması işlemlerinden sorumludur.
+
+- **AnalizModu (Abstract Class)**  
+  Canlı analiz ve statik analiz için ortak arayüz tanımlar.
+
+- **CanliAnaliz**  
+  Gerçek zamanlı kamera görüntüsü üzerinden postür analizini yürütür.
+
+- **RaporYoneticisi**  
+  Analiz sonuçlarını saklar ve HTML formatında rapor üretir.
+
+### 2. Kullanılan OOP Prensipleri
+
+- **Kalıtım (Inheritance)**  
+  `CanliAnaliz` sınıfı, `AnalizModu` soyut sınıfından türetilmiştir.
+
+- **Soyutlama (Abstraction)**  
+  Analiz türleri, ortak bir soyut yapı altında tanımlanmıştır.
+
+- **Kapsülleme (Encapsulation)**  
+  Kritik veriler (`veriler`, `kamera`, `hesaplayici`) sınıf içinde tutulur, doğrudan erişim engellenir.
+
+- **Çok Biçimlilik (Polymorphism)**  
+  Kullanıcının seçtiği analiz türüne göre aynı kontrol yapısı altında farklı çalışma senaryoları yürütülür.
+
+### 3. Veri Yapıları ve Algoritmalar
+
+- **Dictionary (Sözlük)**  
+  MediaPipe landmark verileri ID–koordinat eşleşmesi şeklinde saklanır.
+
+- **List (Liste)**  
+  Analiz boyunca elde edilen puanlar ve seviyeler sıralı şekilde tutulur.
+
+- **Algoritmalar**  
+  Açı hesaplama, eşik kontrolü ve ceza puanı üretimi matematiksel algoritmalarla gerçekleştirilir.
+
+---
+
+## 🧠 Pair Programming ve Yapay Zeka Asistanı Kullanımı
 
 Bu proje, pair programming yaklaşımı benimsenerek geliştirilmiştir.
 Geliştirme sürecinde öğrenci ve yapay zeka asistanı birlikte çalışmıştır.
@@ -120,46 +201,13 @@ Bu sürece ait detaylı açıklamalar aşağıdaki dosyalarda yer almaktadır:
 
 ---
 
-## Projeyi Çalıştırma
+## 📄 Lisans ve Telif Hakkı
 
-Bu proje Python 3 ortamında çalışacak şekilde geliştirilmiştir.
+Bu projede **Tüm Haklar Saklıdır**.
 
----
+Kaynak kodları yalnızca inceleme ve eğitim amaçlı erişime sahiptir. İzin alınmasından ticari amaçla kullanılması, kopyalanması veya dağıtılması yasaktır.
 
-### Gerekli Kütüphanelerin Kurulumu
+**Copyright © 2026 Tuna Özdeş**
 
-Projeyi çalıştırmadan önce aşağıdaki kütüphanelerin sisteme kurulu olması gerekmektedir:
+_Not: Bu proje Ankara Üniversitesi BOZ213 dersi kapsamında geliştirilmiştir._
 
-pip install opencv-python mediapipe numpy pillow
-
----
-
-### Uygulamanın Başlatılması
-
-Tüm dosyalar aynı klasörde olacak şekilde proje dizinine girildikten sonra
-aşağıdaki komut ile uygulama başlatılır:
-
-python main.py
-
----
-
-### Çalışma Akışı
-
-- Uygulama açıldığında kullanıcıdan ad ve soyad bilgisi alınır
-- Canlı analiz veya statik analiz modu seçilir
-- Canlı analizde kamera üzerinden gerçek zamanlı ölçüm yapılır
-- Statik analizde seçilen fotoğraf analiz edilir
-- Analiz sonuçları ekranda görsel olarak gösterilir
-- İstenildiğinde analiz raporu HTML formatında oluşturulur
-
-Not: Canlı analiz modunda çalışabilmesi için sistemde aktif bir kamera bulunmalıdır.
-
----
-
-## Akademik Proje Raporu
-
-Bu projeye ait akademik rapor,
-Computers and Informatics (Dergipark) dergisi yazım kurallarına uygun olarak
-ayrı bir belge halinde hazırlanmıştır.
-
-README.md dosyası, projenin teknik tanıtımı ve kullanımını açıklamak amacıyla hazırlanmıştır. 
