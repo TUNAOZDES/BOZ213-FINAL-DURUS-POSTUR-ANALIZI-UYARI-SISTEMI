@@ -101,6 +101,7 @@ source venv/bin/activate
 ```bash
 pip install opencv-python mediapipe numpy pillow reportlab
 ```
+Not: Tkinter Python ile birlikte gelmektedir, ayrıca kurulmasına gerek yoktur.
 
 ### 4. Uygulamayı Çalıştırın
 
@@ -206,6 +207,7 @@ Kaynak kodları yalnızca inceleme ve eğitim amaçlı erişime sahiptir. İzin 
 **Copyright © 2026 Tuna Özdeş**
 
 _Not: Bu proje Ankara Üniversitesi BOZ213 dersi kapsamında geliştirilmiştir._
+
 
 
 
