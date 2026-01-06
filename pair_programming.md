@@ -1,68 +1,47 @@
-\# Pair Programming Süreci
+# 👥 Pair Programming ve Yapay Zeka Destekli Geliştirme Süreci
 
+## Genel Bakış
+Bu projede, **pair programming (eşli programlama)** yaklaşımı benimsenmiş ve geliştirme süreci,
+öğrenci ile yapay zeka asistanının birlikte çalışması şeklinde yürütülmüştür.
 
+Amaç; kod kalitesini artırmak, hataları erken aşamada tespit etmek ve nesne yönelimli programlama
+(OOP) prensiplerine uygun bir yapı oluşturmaktır.
 
-Bu projede pair programming yaklaşımı, öğrenci ile yapay zeka asistanı
+---
 
-arasında yürütülen işbirliği temelli geliştirme süreci olarak uygulanmıştır.
+## Pair Programming Yaklaşımı
+Geliştirme sürecinde roller şu şekilde uygulanmıştır:
 
+- **Sürücü (Driver):** Kodun yazımından ve entegrasyonundan sorumlu (öğrenci)
+- **Gözlemci (Navigator):** Mimari öneriler, hata tespiti ve iyileştirme önerileri (yapay zeka)
 
+Bu yapı sayesinde:
+- Kod okunabilirliği artırılmış
+- Modüler yapı korunmuş
+- Tekrarlanan hatalar azaltılmıştır
 
-\## İş Paketlerine Bölme
+---
 
+## Yapay Zeka Asistanının Rolü
+Yapay zeka aşağıdaki alanlarda aktif olarak kullanılmıştır:
 
+- Sınıf ve modül tasarımlarının planlanması
+- OOP prensiplerinin (kapsülleme, kalıtım, çok biçimlilik) doğru uygulanması
+- Hata mesajlarının yorumlanması
+- Kod sadeleştirme ve yeniden düzenleme önerileri
+- Akademik rapor dili ve teknik açıklamaların iyileştirilmesi
 
-Proje geliştirme süreci aşağıdaki iş paketlerine ayrılmıştır:
+---
 
+## Sürece Katkılar
+Pair programming yaklaşımı sayesinde:
 
+- Geliştirme süresi daha verimli yönetilmiştir
+- Kod yapısı akademik değerlendirme kriterlerine uygun hale getirilmiştir
+- Proje sürdürülebilir ve genişletilebilir bir mimariye kavuşmuştur
 
-1\. Proje mimarisinin belirlenmesi ve modüler yapı tasarımı  
+---
 
-2\. Görüntü işleme ve postür analiz algoritmalarının geliştirilmesi  
-
-3\. Arayüz (UI) tasarımı ve kullanıcı etkileşimi  
-
-4\. Raporlama sistemi ve HTML çıktı üretimi  
-
-5\. Nesne yönelimli programlama (OOP) prensiplerinin güçlendirilmesi  
-
-6\. Kod organizasyonu, temizlik ve yorumlama
-
-
-
-\## İşbirliği Süreci
-
-
-
-Her iş paketi sırasında yapay zeka asistanı ile etkileşime girilmiştir.
-
-Bu etkileşimler kapsamında:
-
-
-
-\- Kod yapısı gözden geçirilmiş
-
-\- Alternatif tasarım önerileri değerlendirilmiş
-
-\- OOP prensiplerine uygunluk artırılmış
-
-\- Hatalı veya karmaşık kod blokları sadeleştirilmiştir
-
-
-
-Alınan geri bildirimler doğrultusunda proje adım adım
-
-yeniden düzenlenmiş ve geliştirilmeye devam edilmiştir.
-
-
-
-\## Sonuç
-
-
-
-Bu yaklaşım sayesinde proje daha okunabilir, sürdürülebilir
-
-ve akademik kriterlere uygun bir yapıya kavuşturulmuştur.
-
-
-
+## Değerlendirme
+Bu süreç, ders kapsamında beklenen **yapay zeka destekli yazılım geliştirme**
+hedefleriyle birebir uyumludur ve projenin kalitesine doğrudan katkı sağlamıştır.
